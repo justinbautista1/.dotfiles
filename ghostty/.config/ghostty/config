@@ -1,0 +1,17 @@
+theme = dark:GitHub-Dark-High-Contrast, light:GitHub-Light-High-Contrast
+font-size = 16
+font-feature = -liga, -calt, -dlig
+cursor-style = block
+cursor-style-blink = true
+shell-integration-features = no-cursor
+background-opacity = 0.7
+background-blur = 8
+window-position-x = 0
+window-position-y = 0
+window-padding-x = 10
+window-padding-y = 5
+window-width = 9999
+window-height = 25
+macos-titlebar-style = tabs
+confirm-close-surface = false
+keybind = global:opt+space=toggle_visibility
