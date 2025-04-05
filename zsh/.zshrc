@@ -196,3 +196,4 @@ export PIPX_DEFAULT_PYTHON="$(which python)"
 # shorthand commands
 alias cl="clear"
 alias hm="cd ~"
+alias cfg="cd ~/.dotfiles"
