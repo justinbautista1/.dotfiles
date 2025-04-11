@@ -189,11 +189,12 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Created by `pipx` on 2024-08-15 02:21:21
-export PATH="$PATH:/Users/justin/.local/bin"
-export PIPX_DEFAULT_PYTHON="$(which python)"
-
 # shorthand commands
 alias cl="clear"
 alias hm="cd ~"
-alias cfg="cd ~/.dotfiles"
+
+# config aliases
+alias dot="cd ~/.dotfiles"
+alias dot_nvim="cd ~/.dotfiles/nvim/.config/nvim"
+alias dot_ghostty="cd ~/.dotfiles/ghostty/.config/ghostty"
+alias dot_vscode='cd ~/.dotfiles/vscode/Library/Application\ Support/Code/User'

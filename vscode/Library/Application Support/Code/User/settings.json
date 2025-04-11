@@ -1,100 +1,75 @@
 {
+	// Core UI
 	"workbench.startupEditor": "none",
-	"files.autoSave": "afterDelay",
+	"workbench.editor.showTabs": "single",
+	"workbench.colorTheme": "Material Theme Ocean High Contrast",
 	"explorer.confirmDelete": false,
-	"phpserver.relativePath": "",
-	"phpserver.phpConfigPath": "/opt/homebrew/etc/php/8.0/",
-	"terminal.integrated.inheritEnv": false,
+	"files.autoSave": "afterDelay",
+	"editor.fontFamily": "Jetbrains Mono NL",
+	"editor.fontSize": 14,
+	"editor.tabSize": 4,
+	"editor.lineNumbers": "relative",
+	"workbench.iconTheme": "eq-material-theme-icons-ocean",
+
+	// Sidebar & Layout
+	"explorer.compactFolders": false,
+	"workbench.tree.indent": 12,
+	"workbench.sideBar.location": "right",
+	"workbench.activityBar.location": "top",
+
+	// Editor Behavior
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.lightbulb.enabled": "off",
+	"editor.quickSuggestions": {
+		"other": "on",
+		"comments": "off",
+		"strings": "on"
+	},
+
+	// Bracket & Guides
 	"editor.bracketPairColorization.enabled": true,
 	"editor.guides.bracketPairs": "active",
-	"terminal.integrated.enableMultiLinePasteWarning": "auto",
-	"editor.tabSize": 4,
-	"editor.detectIndentation": false,
+
+	// Minimap
+	"editor.minimap.enabled": false,
+	"editor.minimap.autohide": true,
+	"editor.minimap.renderCharacters": false,
+
+	// Terminal
 	"terminal.integrated.defaultProfile.osx": "zsh",
-	"prettier.tabWidth": 4,
-	"prettier.semi": false,
-	"prettier.useTabs": true,
-	"editor.formatOnSave": true,
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[css]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[scss]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[markdown]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"terminal.integrated.fontFamily": "MesloLGS NF",
+	"terminal.integrated.inheritEnv": false,
+	"workbench.panel.showLabels": false,
+
+	// Language-Specific Settings
+	"[javascript][javascriptreact][typescript][typescriptreact][yaml][css][scss][html][json][jsonc][jsonl][markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "explicit",
+			"source.fixAll": "explicit"
+		}
 	},
 	"[python]": {
 		"editor.defaultFormatter": "charliermarsh.ruff",
-		"editor.formatOnType": true,
 		"editor.codeActionsOnSave": {
-			"source.organizeImports.ruff": "explicit"
+			"source.organizeImports.ruff": "explicit",
+			"source.fixAll.ruff": "explicit"
 		}
 	},
-	"git.openRepositoryInParentFolders": "always",
-	"editor.minimap.autohide": true,
-	"editor.minimap.renderCharacters": false,
-	"hediet.vscode-drawio.resizeImages": null,
-	"prettier.quoteProps": "preserve",
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"python.analysis.autoImportCompletions": true,
+	"python.terminal.activateEnvironment": true,
+
+	// Files
+	"files.associations": {
+		"*.scss": "postcss"
 	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"files.exclude": {
+		"**/__pycache__": true
 	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[javascriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"tailwindCSS.includeLanguages": {
-		"javascript": "javascript",
-		"html": "HTML",
-		"css": "css"
-	},
-	"editor.quickSuggestions": {
-		"strings": true
-	},
-	"git.confirmSync": false,
-	"workbench.colorTheme": "GitHub Dark Dimmed",
-	"notebook.output.scrolling": true,
-	"notebook.output.wordWrap": true,
-	"jupyter.askForKernelRestart": false,
-	"python.terminal.activateEnvironment": false,
-	"ruff.nativeServer": true,
-	"evenBetterToml.formatter.allowedBlankLines": 1,
-	"supermaven.enable": {
-		"*": true
-	},
-	"editor.minimap.enabled": false,
-	"workbench.editor.showTabs": "single",
-	"vim.normalModeKeyBindingsNonRecursive": [
-		{
-			"before": ["<C-d>"],
-			"after": ["<C-d>", "z", "z"]
-		},
-		{
-			"before": ["<C-u>"],
-			"after": ["<C-u>", "z", "z"]
-		}
-	],
-	"terminal.integrated.fontFamily": "MesloLGS NF",
-	"editor.lightbulb.enabled": "off",
-	"workbench.sideBar.location": "right",
-	"gitlens.codeLens.authors.enabled": false,
-	"gitlens.codeLens.recentChange.enabled": false,
-	"git.timeline.showAuthor": false,
+
+	// Breadcrumbs
 	"breadcrumbs.showArrays": false,
 	"breadcrumbs.showBooleans": false,
 	"breadcrumbs.showClasses": false,
@@ -120,21 +95,38 @@
 	"breadcrumbs.showStructs": false,
 	"breadcrumbs.showTypeParameters": false,
 	"breadcrumbs.showVariables": false,
+
+	// Git
+	"git.timeline.showAuthor": false,
+	"git.confirmSync": false,
+
+	// Jupyter & Notebook
+	"notebook.output.scrolling": true,
+	"notebook.output.wordWrap": true,
 	"notebook.breadcrumbs.showCodeCells": false,
-	"files.associations": {
-		"*.scss": "postcss"
-	},
-	"database-client.autoSync": true,
-	"editor.fontFamily": "Jetbrains Mono NL",
-	"go.toolsManagement.autoUpdate": true,
-	"workbench.iconTheme": "eq-material-theme-icons-darker",
-	"workbench.activityBar.location": "top",
-	"editor.cursorSmoothCaretAnimation": "on",
-	"workbench.colorCustomizations": {},
-	"editor.linkedEditing": false,
-	"workbench.tree.indent": 12,
-	"files.exclude": {
-		"**/__pycache__": true
-	},
+	"jupyter.askForKernelRestart": false,
+
+	// Vim
+	"vim.useSystemClipboard": true,
+	"vim.smartRelativeLine": true,
+	"vim.highlightedyank.enable": true,
+	"vim.highlightedyank.duration": 250,
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": ["<C-d>"],
+			"after": ["<C-d>", "z", "z"]
+		},
+		{
+			"before": ["<C-u>"],
+			"after": ["<C-u>", "z", "z"]
+		}
+	],
+
+	// Extensions & Plugins
+	"prettier.requireConfig": false,
+	"gitlens.codeLens.authors.enabled": false,
+	"gitlens.codeLens.recentChange.enabled": false,
+	"evenBetterToml.formatter.allowedBlankLines": 1,
+	"postman.settings.dotenv-detection-notification-visibility": false,
 	"supermaven.otherWarning": false
 }
