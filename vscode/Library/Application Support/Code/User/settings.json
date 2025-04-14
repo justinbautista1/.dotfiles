@@ -1,6 +1,7 @@
 {
 	// Core UI
 	"workbench.startupEditor": "none",
+	"window.newWindowProfile": "Default",
 	"workbench.editor.showTabs": "single",
 	"workbench.colorTheme": "Material Theme Ocean High Contrast",
 	"explorer.confirmDelete": false,

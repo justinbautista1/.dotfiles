@@ -43,6 +43,12 @@
 		"command": "workbench.action.showAllEditors",
 		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
 	},
+	{
+		// Swap recent editors (ctrl-tab but easier to reach)
+		"key": "shift-tab",
+		"command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
+		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
+	},
 
 	// File explorer
 	{
@@ -204,8 +210,14 @@
 	},
 	{
 		// Open command palette
-		"key": "space p",
+		"key": "space c p",
 		"command": "workbench.action.showCommands",
+		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+	},
+	{
+		// Reload window
+		"key": "space c r",
+		"command": "workbench.action.reloadWindow",
 		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
 	},
 	{
