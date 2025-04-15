@@ -112,7 +112,16 @@
 	"vim.smartRelativeLine": true,
 	"vim.highlightedyank.enable": true,
 	"vim.highlightedyank.duration": 250,
+	"vim.leader": "<Space>",
+	"vim.handleKeys": {
+		"<Space>": true
+	},
 	"vim.normalModeKeyBindingsNonRecursive": [
+		// Navigation
+		{
+			"before": ["<tab>"],
+			"after": ["<C-6>"]
+		},
 		{
 			"before": ["<C-d>"],
 			"after": ["<C-d>", "z", "z"]
@@ -120,6 +129,120 @@
 		{
 			"before": ["<C-u>"],
 			"after": ["<C-u>", "z", "z"]
+		},
+		{
+			"before": ["<leader>", "h"],
+			"commands": ["workbench.action.navigateLeft"]
+		},
+		{
+			"before": ["<leader>", "j"],
+			"commands": ["workbench.action.navigateDown"]
+		},
+		{
+			"before": ["<leader>", "k"],
+			"commands": ["workbench.action.navigateUp"]
+		},
+		{
+			"before": ["<leader>", "l"],
+			"commands": ["workbench.action.navigateRight"]
+		},
+		{
+			"before": ["<leader>", "<S-l>"],
+			"commands": ["workbench.action.splitEditorRight"]
+		},
+		{
+			"before": ["<leader>", "<S-j>"],
+			"commands": ["workbench.action.splitEditorDown"]
+		},
+		{
+			"before": ["<leader>", ","],
+			"commands": ["workbench.action.showAllEditors"]
+		},
+
+		// File explorer (simple toggle)
+		{
+			"before": ["<leader>", "e"],
+			"commands": ["workbench.view.explorer"]
+		},
+
+		// Window/panel management
+		{
+			"before": ["<leader>", "w", "s"],
+			"commands": ["workbench.action.closeSidebar"]
+		},
+		{
+			"before": ["<leader>", "w", "a"],
+			"commands": ["workbench.action.closeAuxiliaryBar"]
+		},
+		{
+			"before": ["<leader>", "w", "p"],
+			"commands": ["workbench.action.closePanel"]
+		},
+
+		// Search and files
+		{
+			"before": ["<leader>", "<leader>"],
+			"commands": ["workbench.action.quickOpen"]
+		},
+		{
+			"before": ["<leader>", "<S-f>"],
+			"commands": ["workbench.action.findInFiles"]
+		},
+		{
+			"before": ["<leader>", "f"],
+			"commands": ["actions.find"]
+		},
+
+		// Git
+		{
+			"before": ["<leader>", "g"],
+			"commands": ["workbench.view.scm"]
+		},
+
+		// Commands and settings
+		{
+			"before": ["<leader>", "c", "p"],
+			"commands": ["workbench.action.showCommands"]
+		},
+		{
+			"before": ["<leader>", "c", "r"],
+			"commands": ["workbench.action.reloadWindow"]
+		},
+
+		// Editing
+		{
+			"before": ["<leader>", "/"],
+			"commands": ["editor.action.commentLine"]
+		},
+
+		// AI assistance
+		{
+			"before": ["<leader>", "i", "a"],
+			"commands": ["workbench.action.chat.open"]
+		},
+		{
+			"before": ["<leader>", "i", "l"],
+			"commands": ["inlineChat.start"]
+		}
+	],
+	"vim.visualModeKeyBindingsNonRecursive": [
+		// Include commands that should work in visual mode
+		{
+			"before": ["<leader>", "/"],
+			"commands": ["editor.action.commentLine"]
+		},
+		{
+			"before": ["<leader>", "<S-f>"],
+			"commands": ["workbench.action.findInFiles"]
+		},
+		{
+			"before": ["<leader>", "f"],
+			"commands": ["actions.find"]
+		},
+		// Your new Vim-specific keybinding
+		{
+			"before": ["<leader>", "p"],
+			"after": ["\"", "_", "d", "P"]
 		}
 	],
 

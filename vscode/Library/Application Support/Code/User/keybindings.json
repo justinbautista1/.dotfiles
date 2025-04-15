@@ -1,88 +1,18 @@
 // Place your key bindings in this file to override the defaults
 [
-	// Navigation
+	// Wipe (close)
 	{
-		// Move left between panes
-		"key": "space h",
-		"command": "workbench.action.navigateLeft",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Move down between panes
-		"key": "space j",
-		"command": "workbench.action.navigateDown",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Move up between panes
-		"key": "space k",
-		"command": "workbench.action.navigateUp",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Move right between panes
-		"key": "space l",
-		"command": "workbench.action.navigateRight",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Split editor to the right
-		"key": "space shift-l",
-		"command": "workbench.action.splitEditorRight",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Split editor down
-		"key": "space shift-j",
-		"command": "workbench.action.splitEditorDown",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Search tabs
-		"key": "space ,",
-		"command": "workbench.action.showAllEditors",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Swap recent editors (ctrl-tab but easier to reach)
-		"key": "shift-tab",
-		"command": "workbench.action.quickOpenPreviousRecentlyUsedEditor",
-		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
-	},
-
-	// File explorer
-	{
-		// If in editor, open and focus file explorer
-		"key": "space e",
+		// Close sidebar and focus editor when explorer is focused
+		"key": "shift-escape",
 		"command": "runCommands",
 		"args": {
 			"commands": [
-				"workbench.action.toggleSidebarVisibility",
-				"workbench.files.action.focusFilesExplorer"
-			]
-		},
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !sideBarFocus"
-	},
-	{
-		// If in explorer, close it and focus editor
-		"key": "space e",
-		"command": "runCommands",
-		"args": {
-			"commands": [
-				"workbench.action.toggleSidebarVisibility",
+				"workbench.action.closeSidebar",
 				"workbench.action.focusActiveEditorGroup"
 			]
 		},
-		"when": "sideBarFocus && !inputFocus"
+		"when": "explorerViewletVisible"
 	},
-	{
-		// If in editor and explorer is open, close it
-		"key": "space e",
-		"command": "workbench.action.toggleSidebarVisibility",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && foldersViewVisible"
-	},
-
-	// Wipe (close)
 	{
 		// Close sidebar and focus editor when sidebar is focused
 		"key": "escape",
@@ -118,24 +48,6 @@
 			]
 		},
 		"when": "panelFocus"
-	},
-	{
-		// Close sidebar
-		"key": "space w s",
-		"command": "workbench.action.closeSidebar",
-		"when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
-	},
-	{
-		// Close auxiliary bar (secondary sidebar)
-		"key": "space w a",
-		"command": "workbench.action.closeAuxiliaryBar",
-		"when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
-	},
-	{
-		// Close panel
-		"key": "space w p",
-		"command": "workbench.action.closePanel",
-		"when": "(vim.mode == 'Normal' && editorTextFocus) || !inputFocus"
 	},
 
 	// Coding
@@ -182,67 +94,10 @@
 		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
 	},
 	{
-		// Open project file search (cmd+p)
-		"key": "space space",
-		"command": "workbench.action.quickOpen",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Search
-		"key": "space shift-f",
-		"command": "workbench.action.findInFiles",
-		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Find in file
-		"key": "space f",
-		"command": "actions.find",
-		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Open and focus git control
-		"key": "space g",
-		"command": "runCommands",
-		"args": {
-			"commands": ["workbench.view.scm", "workbench.scm.focus"]
-		},
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Open command palette
-		"key": "space c p",
-		"command": "workbench.action.showCommands",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Reload window
-		"key": "space c r",
-		"command": "workbench.action.reloadWindow",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-	},
-	{
 		// Selects word and goes to next match, multicursor
 		"key": "ctrl-n",
 		"command": "editor.action.addSelectionToNextFindMatch",
 		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
-	},
-	{
-		// Comment line
-		"key": "space /",
-		"command": "editor.action.commentLine",
-		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && (editorTextFocus || !inputFocus) && (editorTextFocus && !editorReadonly)"
-	},
-	{
-		// Open copilot chat
-		"key": "space i a",
-		"command": "workbench.action.chat.open",
-		"when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus) && !chatSetupHidden"
-	},
-	{
-		// Open copilot inline chat
-		"key": "space i l",
-		"command": "inlineChat.start",
-		"when": "vim.mode == 'Normal' && editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || vim.mode == 'Normal' && editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
 	},
 
 	// File explorer
