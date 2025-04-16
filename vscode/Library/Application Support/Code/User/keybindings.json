@@ -1,6 +1,6 @@
 // Place your key bindings in this file to override the defaults
 [
-	// Wipe (close)
+	// Wipe (close) from non-editor
 	{
 		// Close sidebar and focus editor when explorer is focused
 		"key": "shift-escape",
@@ -26,7 +26,7 @@
 		"when": "sideBarFocus && !explorerViewletVisible"
 	},
 	{
-		// If in auxiliary bar (secondary bar), close it and focus editor
+		// Close auxiliary bar (secondary bar) and focus editor
 		"key": "escape",
 		"command": "runCommands",
 		"args": {
@@ -38,7 +38,7 @@
 		"when": "auxiliaryBarFocus"
 	},
 	{
-		// If in panel, close it and focus editor
+		// Close panel and focus editor
 		"key": "escape",
 		"command": "runCommands",
 		"args": {
@@ -55,13 +55,13 @@
 		// Move visual selection up
 		"key": "shift-k",
 		"command": "editor.action.moveLinesUpAction",
-		"when": "vim.mode == 'VisualLine' && editorTextFocus"
+		"when": "(vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && editorTextFocus"
 	},
 	{
 		// Move visual selection down
 		"key": "shift-j",
 		"command": "editor.action.moveLinesDownAction",
-		"when": "vim.mode == 'VisualLine' && editorTextFocus"
+		"when": "(vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock') && editorTextFocus"
 	},
 	{
 		// Hover action
@@ -100,22 +100,22 @@
 		"when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
 	},
 
-	// File explorer
+	// File explorer and menus
 	{
 		// Rename file in explorer
-		"key": "shift-r",
+		"key": "r",
 		"command": "renameFile",
 		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
 	},
 	{
 		// Cut file in explorer
-		"key": "shift-x",
+		"key": "x",
 		"command": "filesExplorer.cut",
 		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
 	},
 	{
 		// Delete file in explorer
-		"key": "shift-d",
+		"key": "d",
 		"command": "deleteFile",
 		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
 	},
@@ -139,14 +139,20 @@
 	},
 	{
 		// Create new folder in explorer
-		"key": "f",
+		"key": "shift-a",
 		"command": "explorer.newFolder",
 		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
 	},
 	{
 		// Open file from explorer
 		"key": "enter",
-		"command": "explorer.openAndPassFocus",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"explorer.openAndPassFocus",
+				"workbench.action.closeSidebar"
+			]
+		},
 		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
 	},
 	{
@@ -186,12 +192,12 @@
 
 	// Settings
 	{
-		// Open settings json
+		// Open settings json (macos)
 		"key": "shift-cmd-,",
 		"command": "workbench.action.openSettingsJson"
 	},
 	{
-		// Open keybindings json
+		// Open keybindings json (macos)
 		"key": "shift-cmd-k shift-cmd-s",
 		"command": "workbench.action.openGlobalKeybindingsFile"
 	},

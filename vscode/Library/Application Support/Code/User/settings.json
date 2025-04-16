@@ -100,6 +100,8 @@
 	// Git
 	"git.timeline.showAuthor": false,
 	"git.confirmSync": false,
+	"gitlens.codeLens.authors.enabled": false,
+	"gitlens.codeLens.recentChange.enabled": false,
 
 	// Jupyter & Notebook
 	"notebook.output.scrolling": true,
@@ -112,144 +114,171 @@
 	"vim.smartRelativeLine": true,
 	"vim.highlightedyank.enable": true,
 	"vim.highlightedyank.duration": 250,
-	"vim.leader": "<Space>",
+	"vim.leader": "<space>",
 	"vim.handleKeys": {
-		"<Space>": true
+		"<space>": true
 	},
 	"vim.normalModeKeyBindingsNonRecursive": [
-		// Navigation
+		// Vim bindings
 		{
+			// Switch between recent tabs (like alt-tab)
 			"before": ["<tab>"],
 			"after": ["<C-6>"]
 		},
 		{
+			// Scroll down and center the cursor
 			"before": ["<C-d>"],
 			"after": ["<C-d>", "z", "z"]
 		},
 		{
+			// Scroll up and center the cursor
 			"before": ["<C-u>"],
 			"after": ["<C-u>", "z", "z"]
 		},
+
+		// Vscode bingings
+		// Navigation
 		{
+			// Move to left editor
 			"before": ["<leader>", "h"],
 			"commands": ["workbench.action.navigateLeft"]
 		},
 		{
+			// Move to down editor
 			"before": ["<leader>", "j"],
 			"commands": ["workbench.action.navigateDown"]
 		},
 		{
+			// Move to up editor
 			"before": ["<leader>", "k"],
 			"commands": ["workbench.action.navigateUp"]
 		},
 		{
+			// Move to right editor
 			"before": ["<leader>", "l"],
 			"commands": ["workbench.action.navigateRight"]
 		},
 		{
+			// Split left
 			"before": ["<leader>", "<S-l>"],
 			"commands": ["workbench.action.splitEditorRight"]
 		},
 		{
+			// Split down
 			"before": ["<leader>", "<S-j>"],
 			"commands": ["workbench.action.splitEditorDown"]
 		},
 		{
-			"before": ["<leader>", ","],
-			"commands": ["workbench.action.showAllEditors"]
-		},
-
-		// File explorer (simple toggle)
-		{
+			// Open explorer
 			"before": ["<leader>", "e"],
 			"commands": ["workbench.view.explorer"]
 		},
 
-		// Window/panel management
+		// Layout management
 		{
+			// Wipe (close) sidebar
 			"before": ["<leader>", "w", "s"],
 			"commands": ["workbench.action.closeSidebar"]
 		},
 		{
+			// Wipe secondary bar
 			"before": ["<leader>", "w", "a"],
 			"commands": ["workbench.action.closeAuxiliaryBar"]
 		},
 		{
+			// Wipe panel
 			"before": ["<leader>", "w", "p"],
 			"commands": ["workbench.action.closePanel"]
 		},
 
 		// Search and files
 		{
+			// Search open editors
+			"before": ["<leader>", ","],
+			"commands": ["workbench.action.showAllEditors"]
+		},
+		{
+			// Search files in workspace
 			"before": ["<leader>", "<leader>"],
 			"commands": ["workbench.action.quickOpen"]
 		},
 		{
+			// Search text in workspace files
 			"before": ["<leader>", "<S-f>"],
 			"commands": ["workbench.action.findInFiles"]
 		},
 		{
+			// Search text in current file
 			"before": ["<leader>", "f"],
 			"commands": ["actions.find"]
 		},
 
 		// Git
 		{
+			// Open source control (git)
 			"before": ["<leader>", "g"],
 			"commands": ["workbench.view.scm"]
 		},
 
 		// Commands and settings
 		{
+			// Open command palette
 			"before": ["<leader>", "c", "p"],
 			"commands": ["workbench.action.showCommands"]
 		},
 		{
+			// Reload window
 			"before": ["<leader>", "c", "r"],
 			"commands": ["workbench.action.reloadWindow"]
 		},
 
 		// Editing
 		{
+			// Comment
 			"before": ["<leader>", "/"],
 			"commands": ["editor.action.commentLine"]
 		},
 
 		// AI assistance
 		{
+			// Open chat
 			"before": ["<leader>", "i", "a"],
 			"commands": ["workbench.action.chat.open"]
 		},
 		{
+			// Open inline chat
 			"before": ["<leader>", "i", "l"],
 			"commands": ["inlineChat.start"]
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
-		// Include commands that should work in visual mode
+		// Vim bindings
 		{
+			// Paste replace
+			"before": ["<leader>", "p"],
+			"after": ["\"", "_", "d", "P"]
+		},
+
+		// Vscode bindings
+		{
+			// Comment
 			"before": ["<leader>", "/"],
 			"commands": ["editor.action.commentLine"]
 		},
 		{
+			// Search text in workspace files
 			"before": ["<leader>", "<S-f>"],
 			"commands": ["workbench.action.findInFiles"]
 		},
 		{
+			// Search text in current file
 			"before": ["<leader>", "f"],
 			"commands": ["actions.find"]
-		},
-		// Your new Vim-specific keybinding
-		{
-			"before": ["<leader>", "p"],
-			"after": ["\"", "_", "d", "P"]
 		}
 	],
 
 	// Extensions & Plugins
 	"prettier.requireConfig": false,
-	"gitlens.codeLens.authors.enabled": false,
-	"gitlens.codeLens.recentChange.enabled": false,
 	"evenBetterToml.formatter.allowedBlankLines": 1,
 	"postman.settings.dotenv-detection-notification-visibility": false,
 	"supermaven.otherWarning": false
