@@ -192,6 +192,7 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # shorthand commands
 alias cl="clear"
 alias hm="cd ~"
+alias hl="cd ~ && clear"
 
 # config aliases
 alias dot="cd ~/.dotfiles"
