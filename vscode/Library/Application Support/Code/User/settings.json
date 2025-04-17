@@ -4,7 +4,6 @@
 	"window.newWindowProfile": "Default",
 	"workbench.editor.showTabs": "single",
 	"workbench.colorTheme": "Material Theme Ocean High Contrast",
-	"explorer.confirmDelete": false,
 	"files.autoSave": "afterDelay",
 	"editor.fontFamily": "Jetbrains Mono NL",
 	"editor.fontSize": 14,
@@ -19,7 +18,10 @@
 	"workbench.activityBar.location": "top",
 
 	// Editor Behavior
+	"editor.smoothScrolling": true,
 	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.cursorSurroundingLines": 1000,
+	"editor.cursorSurroundingLinesStyle": "all",
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
 	"editor.lightbulb.enabled": "off",
@@ -148,16 +150,6 @@
 			"before": ["<tab>"],
 			"after": ["<C-6>"]
 		},
-		{
-			// Scroll down and center the cursor
-			"before": ["<C-d>"],
-			"after": ["<C-d>", "z", "z"]
-		},
-		{
-			// Scroll up and center the cursor
-			"before": ["<C-u>"],
-			"after": ["<C-u>", "z", "z"]
-		},
 
 		// Vscode bingings
 		// Navigation
@@ -197,7 +189,7 @@
 			"commands": ["workbench.view.explorer"]
 		},
 
-		// Layout management
+		// Layout & buffer management
 		{
 			// Wipe (close) sidebar
 			"before": ["<leader>", "w", "s"],
@@ -212,6 +204,16 @@
 			// Wipe panel
 			"before": ["<leader>", "w", "p"],
 			"commands": ["workbench.action.closePanel"]
+		},
+		{
+			// Delete active buffer (editor)
+			"before": ["<leader>", "b", "d"],
+			"commands": ["workbench.action.closeActiveEditor"]
+		},
+		{
+			// Delete all inactive (other) buffers (editors)
+			"before": ["<leader>", "b", "o"],
+			"commands": ["workbench.action.closeOtherEditors"]
 		},
 
 		// Search and files
@@ -342,3 +344,4 @@
 	"supermaven.otherWarning": false,
 	"autoDocstring.startOnNewLine": true
 }
+
