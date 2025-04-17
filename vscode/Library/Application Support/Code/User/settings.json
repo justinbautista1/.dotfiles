@@ -176,7 +176,7 @@
 			"commands": ["workbench.view.explorer"]
 		},
 
-		// Layout management
+		// Layout & buffer management
 		{
 			// Wipe (close) sidebar
 			"before": ["<leader>", "w", "s"],
@@ -192,6 +192,16 @@
 			"before": ["<leader>", "w", "p"],
 			"commands": ["workbench.action.closePanel"]
 		},
+    {
+      // Delete active buffer (editor)
+      "before": ["<leader>", "b", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      // Delete all inactive buffers (editors)
+      "before": ["<leader>", "b", "<S-d>"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
 
 		// Search and files
 		{
