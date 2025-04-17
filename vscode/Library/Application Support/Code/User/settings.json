@@ -198,8 +198,8 @@
       "commands": ["workbench.action.closeActiveEditor"]
     },
     {
-      // Delete all inactive buffers (editors)
-      "before": ["<leader>", "b", "<S-d>"],
+      // Delete all inactive (other) buffers (editors)
+      "before": ["<leader>", "b", "o"],
       "commands": ["workbench.action.closeOtherEditors"]
     },
 
