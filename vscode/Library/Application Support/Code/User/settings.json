@@ -4,7 +4,6 @@
 	"window.newWindowProfile": "Default",
 	"workbench.editor.showTabs": "single",
 	"workbench.colorTheme": "Material Theme Ocean High Contrast",
-	"explorer.confirmDelete": false,
 	"files.autoSave": "afterDelay",
 	"editor.fontFamily": "Jetbrains Mono NL",
 	"editor.fontSize": 14,
@@ -19,7 +18,10 @@
 	"workbench.activityBar.location": "top",
 
 	// Editor Behavior
+	"editor.smoothScrolling": true,
 	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.cursorSurroundingLines": 1000,
+	"editor.cursorSurroundingLinesStyle": "all",
 	"editor.formatOnSave": true,
 	"editor.formatOnPaste": true,
 	"editor.lightbulb.enabled": "off",
@@ -134,16 +136,6 @@
 			// Switch between recent tabs (like alt-tab)
 			"before": ["<tab>"],
 			"after": ["<C-6>"]
-		},
-		{
-			// Scroll down and center the cursor
-			"before": ["<C-d>"],
-			"after": ["<C-d>", "z", "z"]
-		},
-		{
-			// Scroll up and center the cursor
-			"before": ["<C-u>"],
-			"after": ["<C-u>", "z", "z"]
 		},
 
 		// Vscode bingings
