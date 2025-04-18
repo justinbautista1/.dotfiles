@@ -126,8 +126,14 @@
 	"vim.smartRelativeLine": true,
 	"vim.highlightedyank.enable": true,
 	"vim.highlightedyank.duration": 250,
+	"vim.timeout": 100000,
 	"vim.leader": "<space>",
 	"vim.handleKeys": {
+		"<C-h>": false,
+		"<C-j>": false,
+		"<C-k>": false,
+		"<C-l>": false,
+		"<C-w>": false,
 		"<space>": true
 	},
 	"vim.normalModeKeyBindingsNonRecursive": [
@@ -139,43 +145,6 @@
 		},
 
 		// Vscode bingings
-		// Navigation
-		{
-			// Move to left editor
-			"before": ["<leader>", "h"],
-			"commands": ["workbench.action.navigateLeft"]
-		},
-		{
-			// Move to down editor
-			"before": ["<leader>", "j"],
-			"commands": ["workbench.action.navigateDown"]
-		},
-		{
-			// Move to up editor
-			"before": ["<leader>", "k"],
-			"commands": ["workbench.action.navigateUp"]
-		},
-		{
-			// Move to right editor
-			"before": ["<leader>", "l"],
-			"commands": ["workbench.action.navigateRight"]
-		},
-		{
-			// Split left
-			"before": ["<leader>", "<S-l>"],
-			"commands": ["workbench.action.splitEditorRight"]
-		},
-		{
-			// Split down
-			"before": ["<leader>", "<S-j>"],
-			"commands": ["workbench.action.splitEditorDown"]
-		},
-		{
-			// Open explorer
-			"before": ["<leader>", "e"],
-			"commands": ["workbench.view.explorer"]
-		},
-
 		// Layout & buffer management
 		{
 			// Wipe (close) sidebar
@@ -192,16 +161,6 @@
 			"before": ["<leader>", "w", "p"],
 			"commands": ["workbench.action.closePanel"]
 		},
-    {
-      // Delete active buffer (editor)
-      "before": ["<leader>", "b", "d"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      // Delete all inactive (other) buffers (editors)
-      "before": ["<leader>", "b", "o"],
-      "commands": ["workbench.action.closeOtherEditors"]
-    },
 
 		// Search and files
 		{
@@ -223,6 +182,16 @@
 			// Search text in current file
 			"before": ["<leader>", "f"],
 			"commands": ["actions.find"]
+		},
+		{
+			// Open explorer
+			"before": ["<leader>", "e"],
+			"commands": ["workbench.view.explorer"]
+		},
+		{
+			// Go to references
+			"before": ["g", "r"],
+			"commands": ["editor.action.goToReferences"]
 		},
 
 		// Git
