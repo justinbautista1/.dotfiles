@@ -239,6 +239,11 @@
 			"before": ["<leader>", "p"],
 			"after": ["\"", "_", "d", "P"]
 		},
+		{
+			// Delete
+			"before": ["<leader>", "d"],
+			"after": ["\"", "_", "d"]
+		},
 
 		// Vscode bindings
 		{
