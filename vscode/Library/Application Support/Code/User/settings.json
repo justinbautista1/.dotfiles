@@ -3,13 +3,15 @@
 	"workbench.startupEditor": "none",
 	"window.newWindowProfile": "Default",
 	"workbench.editor.showTabs": "single",
-	"workbench.colorTheme": "Material Theme Ocean High Contrast",
 	"files.autoSave": "afterDelay",
-	"editor.fontFamily": "Jetbrains Mono NL",
-	"editor.fontSize": 14,
+	// "editor.fontFamily": "Jetbrains Mono NL",
+	"editor.fontFamily": "'Monaspace Neon', monospace",
+	"editor.fontLigatures": "'calt', 'ss01', 'ss03', 'ss07', 'ss09', 'liga', 'cv01' 2",
+	"editor.inlineSuggest.fontFamily": "'Monaspace Radon', monospace",
 	"editor.tabSize": 4,
 	"editor.lineNumbers": "relative",
-	"workbench.iconTheme": "eq-material-theme-icons-ocean",
+	"editor.fontSize": 14,
+	"scm.inputFontSize": 14,
 
 	// Sidebar & Layout
 	"explorer.compactFolders": false,
@@ -118,7 +120,7 @@
 	// Chat
 	"chat.agent.enabled": true,
 	"github.copilot.enable": {
-		"*": false
+		"*": true
 	},
 
 	// Vim
@@ -333,7 +335,8 @@
 		"SIM300",
 		"TD",
 		"FIX002",
-		"RUF012"
+		"RUF012",
+		"EM102"
 	],
 	"ruff.lint.select": ["ALL"],
 	"ruff.nativeServer": true,
@@ -342,6 +345,7 @@
 	"evenBetterToml.formatter.allowedBlankLines": 1,
 	"postman.settings.dotenv-detection-notification-visibility": false,
 	"supermaven.otherWarning": false,
-	"autoDocstring.startOnNewLine": true
+	"autoDocstring.startOnNewLine": true,
+	"workbench.colorTheme": "Material Theme Ocean High Contrast"
 }
 
