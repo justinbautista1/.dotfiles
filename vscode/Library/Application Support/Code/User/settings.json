@@ -119,34 +119,42 @@
   "notebook.breadcrumbs.showCodeCells": false,
   "jupyter.askForKernelRestart": false,
 
-  // Chat
-  "chat.agent.enabled": true,
-  // "github.copilot.enable": {
-  // 	 "*": false
-  // },
+	// Chat
+	"chat.agent.enabled": true,
+	"github.copilot.enable": {
+		"*": true
+	},
 
-  // Vim
-  "vim.useSystemClipboard": true,
+	// Vim
+	"vim.useSystemClipboard": true,
   "vim.smartRelativeLine": true,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 250,
   "vim.timeout": 100000,
   "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-h>": false,
-    "<C-j>": false,
-    "<C-k>": false,
-    "<C-l>": false,
-    "<C-w>": false,
-    "<space>": true
-  },
-  "vim.normalModeKeyBindingsNonRecursive": [
-    // Vim bindings
-    {
-      // Switch between recent tabs (like alt-tab)
-      "before": ["<tab>"],
-      "after": ["<C-6>"]
-    },
+	"vim.handleKeys": {
+		"<C-d>": true,
+		"<C-k>": false,
+		"<C-c>": false,
+		"<C-u>": true,
+		"<C-v>": false,
+		"<C-x>": false,
+		"<C-a>": false,
+		"<C-f>": false,
+		"<C-h>": false,
+		"<C-w>": false,
+		"<C-s>": false,
+		"<C-p>": false,
+		"<C-b>": false,
+		"<space>": true
+	},
+	"vim.normalModeKeyBindingsNonRecursive": [
+		// Vim bindings
+		{
+			// Switch between recent tabs (like alt-tab)
+			"before": ["<tab>"],
+			"after": ["<C-6>"]
+		},
 
     // Vscode bingings
     // Layout & buffer management
@@ -267,10 +275,48 @@
     }
   ],
 
-  // Extensions & Plugins
+	// Prettier
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true,
+	"prettier.requireConfig": false,
+
+	// Ruff
+	"ruff.lineLength": 120,
+	"ruff.lint.extendSelect": [],
+	"ruff.lint.ignore": [
+		"T201",
+		"D",
+		"FA100",
+		"PLR0913",
+		"E402",
+		"FA102",
+		"COM812",
+		"RET504",
+		"ERA001",
+		"S113",
+		"F841",
+		"PLR2004",
+		"PTH123",
+		"E501",
+		"BLE001",
+		"TRY300",
+		"TRY003",
+		"EM101",
+		"ANN401",
+		"SIM300",
+		"TD",
+		"FIX002",
+		"RUF012",
+		"EM102"
+	],
+	"ruff.lint.select": ["ALL"],
+	"ruff.nativeServer": true,
+
+// Extensions & Plugins
   "prettier.requireConfig": false,
   "evenBetterToml.formatter.allowedBlankLines": 1,
   "postman.settings.dotenv-detection-notification-visibility": false,
   "supermaven.otherWarning": false,
   "autoDocstring.startOnNewLine": true
 }
+
