@@ -192,6 +192,8 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 # shorthand commands
 alias cl="clear"
 alias hm="cd ~"
+alias hc="cd ~ && clear"
+alias refill="brew update && brew upgrade && brew cleanup"
 
 # config aliases
 alias dot="cd ~/.dotfiles"

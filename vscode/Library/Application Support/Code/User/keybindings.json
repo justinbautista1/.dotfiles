@@ -197,6 +197,38 @@
 		},
 		"when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceIsFolder && !inputFocus"
 	},
+
+	// Buffer (editor) management
+	{
+		"key": "ctrl-h",
+		"command": "workbench.action.navigateLeft",
+		"when": "(vim.mode == 'Normal' && editorTextFocus) || sideBarFocus"
+	},
+	{
+		"key": "ctrl-l",
+		"command": "workbench.action.navigateRight",
+		"when": "(vim.mode == 'Normal' && editorTextFocus) || sideBarFocus"
+	},
+	{
+		"key": "ctrl-k",
+		"command": "workbench.action.navigateUp",
+		"when": "(vim.mode == 'Normal' && editorTextFocus) || sideBarFocus"
+	},
+	{
+		"key": "ctrl-j",
+		"command": "workbench.action.navigateDown",
+		"when": "(vim.mode == 'Normal' && editorTextFocus) || sideBarFocus"
+	},
+	{
+		"key": "ctrl-shift-l",
+		"command": "workbench.action.splitEditorRight",
+		"when": "vim.mode == 'Normal' && editorTextFocus"
+	},
+	{
+		"key": "ctrl-shift-j",
+		"command": "workbench.action.splitEditorDown",
+		"when": "vim.mode == 'Normal' && editorTextFocus"
+	},
 	{
 		// Close active editor
 		"key": "ctrl-w",
