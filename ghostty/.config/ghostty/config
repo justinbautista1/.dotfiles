@@ -1,6 +1,7 @@
 # -- UI --
 
 theme = GitHub-Dark-Default
+font-family = Monaspace Neon
 font-size = 16
 font-feature = -liga, -calt, -dlig
 cursor-style = block
